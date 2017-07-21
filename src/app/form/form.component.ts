@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { GeocacheApiService } from 'geocache-api.service.ts';
+import { GeocacheApiService } from '../geocache-api.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-  providers: [ GeocacheApiService ] 
+  providers: [ GeocacheApiService ]
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   Cache: any[] = null;
-  constructor(private GeoCache: CeocacheApiService) { }
+  constructor(private GeoCache: GeocacheApiService) { }
   goGetGeocache(){
     this.GeoCache.getGeocacheCall().subscribe(response => {
       this.Cache = response.json();

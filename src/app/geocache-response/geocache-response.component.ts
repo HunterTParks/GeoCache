@@ -6,11 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./geocache-response.component.css'],
   providers: []
 })
-export class GeocacheResponseComponent implements OnInit {
+export class GeocacheResponseComponent {
   @Input() childCache;
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
