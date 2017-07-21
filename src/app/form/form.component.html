@@ -1,12 +1,12 @@
 <form>
   <div class = "form-group">
-    <!-- <label for = "latitude">
+    <label for = "latitude">Latitude</label>
     <input #latitude>
     <br>
-    <label for = "longitude">
-    <input #longitude> -->
+    <label for = "longitude">Longitude</label>
+    <input #longitude>
   </div>
-  <button (click) = "getGeocacheCall()">Submit</button>
+  <button (click) = "goGetGeocache()">Submit</button>
 </form>
 
 <div *ngIf="Cache">
