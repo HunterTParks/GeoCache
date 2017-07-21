@@ -13,8 +13,9 @@ export class FormComponent {
   constructor(private GeoCache: GeocacheApiService) { }
 
   goGetGeocache(){
-    this.GeoCache.getGeocacheCall().subscribe(response => {
-      this.Cache = response.json();
-    });
+    // this.GeoCache.getGeocacheCall().subscribe(response => {
+    //   this.Cache = response.json();
+    // });
+    console.log("TESTING");
   }
 }
