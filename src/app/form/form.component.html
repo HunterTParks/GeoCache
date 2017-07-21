@@ -8,3 +8,7 @@
   </div>
   <button (click) = "getGeocacheCall()">Submit</button>
 </form>
+
+<div *ngIf="Cache">
+  <app-geocache-response [childCache]="Cache"></app-geocache-response>
+</div>
