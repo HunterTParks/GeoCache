@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+// import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-geocache-response',
@@ -6,8 +7,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./geocache-response.component.css'],
   providers: []
 })
+
 export class GeocacheResponseComponent {
   @Input() childCache;
-  constructor() { }
+  constructor() {
 
+  }
+
+  ngOnInit(){
+    console.log(this.childCache);
+  }
 }

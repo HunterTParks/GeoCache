@@ -9,14 +9,14 @@ import { GeocacheApiService } from '../geocache-api.service';
   providers: [ GeocacheApiService ]
 })
 export class FormComponent {
-  Cache: any = null;
+  Cache: any[] = null;
+  
   constructor(private GeoCache: GeocacheApiService) { }
 
   goGetGeocache(){
     this.GeoCache.getGeocacheCall().subscribe(response => {
       this.Cache = response.json();
-      console.log(this.Cache.results);
+      console.log(response.json());
     });
-    // console.log("TESTING");
   }
 }
