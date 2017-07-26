@@ -6,9 +6,9 @@
     <label for = "longitude">Longitude</label>
     <input #longitude>
   </div>
-  <button type = "button" (click) = "goGetGeocache()">Submit</button>
+  <button type = "button" (click) = "goGetGeocache(latitude.value, longitude.value)">Submit</button>
 </form>
 
 <div *ngIf="cache">
-  <app-geocache-response [childCache]="cache"></app-geocache-response>Howdy
+  <app-geocache-response [childCache]="cache"></app-geocache-response>
 </div>
