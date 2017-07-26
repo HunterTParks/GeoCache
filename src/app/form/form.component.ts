@@ -14,10 +14,17 @@ export class FormComponent {
 
   constructor(private GeoCache: GeocacheApiService) { }
 
-  goGetGeocache(latitude, longitude){
+  goGetAddress(latitude, longitude){
     this.GeoCache.getGeocacheCall(latitude, longitude).subscribe(response => {
       this.cache = new Cache(response.json().results[0].formatted_address);
       console.log(response.json());
     });
+  }
+
+  goGetGeocache(address, city, state){
+  this.GeoCache.getAddressGeoCall(address, city, state).subscribe(response => {
+      this.cache = new Cache(response.json().results[0].geometry.location);
+      console.log(response.json());
+    })
   }
 }

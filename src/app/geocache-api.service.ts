@@ -14,4 +14,8 @@ export class GeocacheApiService {
     console.log("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&key=" + geoKey);
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&key=" + geoKey);
   }
+
+  getAddressGeoCall(address: string, city: string, state: string){
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "," + city + "," + state + "&key=" + geoKey);
+  }
 }

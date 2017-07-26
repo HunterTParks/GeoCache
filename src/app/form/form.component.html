@@ -6,9 +6,11 @@
     <label for = "longitude">Longitude</label>
     <input #longitude>
   </div>
-  <button type = "button" (click) = "goGetGeocache(latitude.value, longitude.value)">Get Address</button>
+  <button type = "button" (click) = "goGetAddress(latitude.value, longitude.value)">Get Address</button>
 </form>
+
 <br>
+
 <form>
   <div class="form-group">
     <label for="address">Address</label>
@@ -20,8 +22,7 @@
     <label for="state">State (Abbr. only: exp. CA, OR)</label>
     <input #state>
   </div>
-  <button type="button" (click) = "goGetAddress(address.value, city.value, state.value)">Get Coordinates</button>
-  </div>
+  <button type="button" (click) = "goGetGeocache(address.value, city.value, state.value)">Get Coordinates</button>
 </form>
 
 <div *ngIf="cache">
