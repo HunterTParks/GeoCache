@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { GeocacheApiService } from '../geocache-api.service';
 import { Cache } from '../cache';
+import { Address } from '../address.model';
 
 @Component({
   selector: 'app-form',
@@ -11,6 +12,7 @@ import { Cache } from '../cache';
 })
 export class FormComponent {
   cache: Cache;
+  address: Address = null;
 
   constructor(private GeoCache: GeocacheApiService) { }
 
@@ -22,9 +24,8 @@ export class FormComponent {
   }
 
   goGetGeocache(address, city, state){
-  this.GeoCache.getAddressGeoCall(address, city, state).subscribe(response => {
-      this.cache = new Cache(response.json().results[0].geometry.location);
-      console.log(response.json());
-    })
-  }
+    this.GeoCache.getAddressGeoCall(address, city, state).subscribe(response => {
+        this.address = new Address(response.json().results[0].geometry.location.lat, response.json().results[0].geometry.location.lon);
+      });
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-address-response',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address-response.component.css']
 })
 export class AddressResponseComponent implements OnInit {
-
+  @Input() childCoordinates;
+  
   constructor() { }
 
   ngOnInit() {

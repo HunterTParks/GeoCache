@@ -1,3 +1,3 @@
 export class Address {
-  constructor(public address: string, public city: string, public state: string) {};
+  constructor(public latitude: string, public longitude: string) {};
 }
