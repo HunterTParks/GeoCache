@@ -6,12 +6,14 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { GeocacheResponseComponent } from './geocache-response/geocache-response.component';
+import { AddressResponseComponent } from './address-response/address-response.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    GeocacheResponseComponent
+    GeocacheResponseComponent,
+    AddressResponseComponent
   ],
   imports: [
     BrowserModule,
