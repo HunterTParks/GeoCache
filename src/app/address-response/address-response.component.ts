@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AddressResponseComponent implements OnInit {
   @Input() childCoordinates;
-  
-  constructor() { }
+
+  constructor() {  }
 
   ngOnInit() {
+    
   }
 
 }

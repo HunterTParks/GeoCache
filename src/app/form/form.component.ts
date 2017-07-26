@@ -18,14 +18,15 @@ export class FormComponent {
 
   goGetAddress(latitude, longitude){
     this.GeoCache.getGeocacheCall(latitude, longitude).subscribe(response => {
-      this.cache = new Cache(response.json().results[0].formatted_address);
+      this.cache = new Cache(response.json().results[0].geometry.location.lat,response.json().results[0].geometry.location.lng, response.json().results[0].address_components[1].long_name, response.json().results[0].address_components[2].long_name, response.json().results[0].address_components[4].long_name);
       console.log(response.json());
     });
   }
 
   goGetGeocache(address, city, state){
     this.GeoCache.getAddressGeoCall(address, city, state).subscribe(response => {
-        this.address = new Address(response.json().results[0].geometry.location.lat, response.json().results[0].geometry.location.lon);
-      });
-    }
+      this.cache = new Cache(response.json().results[0].geometry.location.lat,response.json().results[0].geometry.location.lng, response.json().results[0].address_components[1].long_name, response.json().results[0].address_components[2].long_name, response.json().results[0].address_components[4].long_name);
+      console.log(this.cache);
+    });
+  }
 }
