@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-geocache-response',
@@ -8,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   providers: []
 })
 
-export class GeocacheResponseComponent {
+export class GeocacheResponseComponent implements OnInit{
   @Input() childCache;
   constructor() {
 
   }
 
   ngOnInit(){
-    console.log(this.childCache);
+
   }
 }
